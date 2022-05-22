@@ -13,6 +13,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -35,6 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
     private ImageView imgProfile;
     private Uri imgPath;
     private Button btnUpload;
+    private TextView txtMyusername;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,10 @@ public class ProfileActivity extends AppCompatActivity {
         btnLogOut = findViewById(R.id.btnLogOut);
         btnUpload = findViewById(R.id.btnUploadProfileImg);
         imgProfile = findViewById(R.id.profile_img);
+        txtMyusername = findViewById(R.id.txtMyusername);
+
+        txtMyusername.setText("Email: " + FirebaseAuth.getInstance().getCurrentUser().getEmail());
+
         FirebaseDatabase.getInstance().getReference("user/"+ FirebaseAuth.getInstance().getCurrentUser().getUid() + "/profilePicture").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

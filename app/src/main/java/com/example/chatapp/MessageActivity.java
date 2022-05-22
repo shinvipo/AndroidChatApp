@@ -25,6 +25,7 @@ import java.util.ArrayList;
 
 public class MessageActivity extends AppCompatActivity {
 
+
     private RecyclerView recyclerView;
     private EditText edtMessageInput;
     private TextView txtChattingWith;

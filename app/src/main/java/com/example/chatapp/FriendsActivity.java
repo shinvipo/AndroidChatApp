@@ -95,7 +95,11 @@ public class FriendsActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    users.add(dataSnapshot.getValue(User.class));
+                    if(!dataSnapshot.getValue(User.class).getEmail().equalsIgnoreCase(FirebaseAuth.getInstance().getCurrentUser().getEmail()))
+                        users.add(dataSnapshot.getValue(User.class));
+                    else{
+                        myImageUrl = dataSnapshot.getValue(User.class).getProfilePicture();
+                    }
                 }
                 usersAdapter = new UsersAdapter(users,FriendsActivity.this,onUserClickListener);
                 recyclerView.setLayoutManager(new LinearLayoutManager(FriendsActivity.this));
@@ -103,12 +107,6 @@ public class FriendsActivity extends AppCompatActivity {
                 progressBar.setVisibility(View.GONE);
                 recyclerView.setVisibility(View.VISIBLE);
 
-                for (User user: users){
-                    if(user.getEmail().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())){
-                        myImageUrl = user.getProfilePicture();
-                        return;
-                    }
-                }
             }
 
             @Override
