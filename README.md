@@ -1,6 +1,6 @@
 "# AndroidChatApp Using Firebase"
-#Android-PTIT
-Features:
+\n#Android-PTIT
+\nFeatures:
   - Login/Logout
   - List All user
   - Send Message 1- 1
