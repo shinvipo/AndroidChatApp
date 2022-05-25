@@ -8,11 +8,15 @@
         <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/drawable/message_input_background.xml" value="0.28" />
         <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/drawable/round_blue_shape.xml" value="0.184" />
         <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/drawable/send_img.xml" value="0.28" />
+        <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/drawable/upload_file.xml" value="0.28" />
         <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/layout/activity_friends.xml" value="0.18478260869565216" />
         <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/layout/activity_message.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/layout/activity_profile.xml" value="0.25" />
+        <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/layout/activity_search.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/layout/message_holder.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/layout/search_holder.xml" value="0.38697916666666665" />
+        <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/layout/search_message.xml" value="0.38697916666666665" />
         <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/layout/user_holder.xml" value="0.26666666666666666" />
         <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/menu/profile.xml" value="0.28072916666666664" />
         <entry key="..\:/Users/Pam/Desktop/PTIT/Android/ChatApp/app/src/main/res/menu/profile_menu.xml" value="0.38697916666666665" />

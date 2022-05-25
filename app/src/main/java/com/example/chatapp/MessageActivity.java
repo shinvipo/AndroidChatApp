@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -30,7 +31,7 @@ public class MessageActivity extends AppCompatActivity {
     private EditText edtMessageInput;
     private TextView txtChattingWith;
     private ProgressBar progressBar;
-    private ImageView imgToolbar,imgSend;
+    private ImageView imgToolbar,imgSend, imgSearch;
 
     private MessageAdapter messageAdapter;
     private ArrayList<Message> messages;
@@ -56,7 +57,7 @@ public class MessageActivity extends AppCompatActivity {
         txtChattingWith = findViewById(R.id.txtChattingWith);
         progressBar= findViewById(R.id.progressMessages);
         imgToolbar= findViewById(R.id.img_toolbar);
-
+        imgSearch = findViewById(R.id.imgSearch1);
         txtChattingWith.setText(usernameOfTheRoommate);
 
         messages = new ArrayList<>();
@@ -64,7 +65,7 @@ public class MessageActivity extends AppCompatActivity {
         imgSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseDatabase.getInstance().getReference("messages/"+chatRoomId).push().setValue(new Message(FirebaseAuth.getInstance().getCurrentUser().getEmail(),emailOfRoommate,edtMessageInput.getText().toString()));
+                FirebaseDatabase.getInstance().getReference("messages/"+chatRoomId).push().setValue(new Message(FirebaseAuth.getInstance().getCurrentUser().getEmail(),emailOfRoommate,edtMessageInput.getText().toString(),"Text"));
                 edtMessageInput.setText("");
             }
         });
@@ -73,6 +74,16 @@ public class MessageActivity extends AppCompatActivity {
         recyclerView.setAdapter(messageAdapter);
 
         Glide.with(MessageActivity.this).load(getIntent().getStringExtra("img_of_roommate")).placeholder(R.drawable.account_img).error(R.drawable.account_img).into(imgToolbar);
+
+        imgSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MessageActivity.this,SearchActivity.class)
+                .putExtra("txtChatWith",usernameOfTheRoommate)
+                .putExtra("chatRoomID",chatRoomId)
+                .putExtra("img_of_roommate",getIntent().getStringExtra("img_of_roommate")));
+            }
+        });
 
         setUpChatRoom();
 

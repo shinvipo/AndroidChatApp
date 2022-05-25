@@ -37,13 +37,13 @@ public class UsersAdapter extends RecyclerView.Adapter<UsersAdapter.UsersHolder>
     @Override
     public UsersHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view   = LayoutInflater.from(context).inflate(R.layout.user_holder,parent,false);
-
         return new UsersHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull UsersHolder holder, int position) {
         holder.txtUsername.setText(users.get(position).getUsername());
+
         Glide.with(context).load(users.get(position).getProfilePicture()).error(R.drawable.account_img).placeholder(R.drawable.account_img).into(holder.imgView);
     }
 

@@ -42,8 +42,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageH
     public void onBindViewHolder(@NonNull MessageHolder holder, int position) {
         holder.txtMessage.setText(messages.get(position).getContent());
 
+        String content = messages.get(position).getContent();
+        String type = messages.get(position).getType();
+        holder.imgMess.setVisibility(View.GONE);
+        if(type.equalsIgnoreCase("text")){
+            holder.txtMessage.setText(content);}
+        else {
+            return;
+        }
         ConstraintLayout constraintLayout = holder.ccll;
-
         if (messages.get(position).getSender().equals(FirebaseAuth.getInstance().getCurrentUser().getEmail())){
             Glide.with(context).load(senderImg).error(R.drawable.account_img).placeholder(R.drawable.account_img).into(holder.profImage);
             ConstraintSet constraintSet = new ConstraintSet();
@@ -74,7 +81,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageH
     class MessageHolder extends RecyclerView.ViewHolder{
         ConstraintLayout ccll;
         TextView txtMessage;
-        ImageView profImage;
+        ImageView profImage,imgMess;
 
         public MessageHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,6 +89,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageH
             ccll = itemView.findViewById(R.id.ccLayout);
             txtMessage = itemView.findViewById(R.id.txt_message_content);
             profImage = itemView.findViewById(R.id.small_profile_img);
+            imgMess = itemView.findViewById(R.id.img_message);
 
         }
     }

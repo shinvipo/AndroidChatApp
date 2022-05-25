@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnSubmit;
     private TextView txtLoginIn4;
 
-    private boolean isSigningup = true;     // muốn đăng kí ?
+    private boolean isSigningup = true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

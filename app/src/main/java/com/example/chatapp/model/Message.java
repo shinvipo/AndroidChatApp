@@ -1,7 +1,14 @@
 package com.example.chatapp.model;
 
 public class Message {
-    private String Sender, Receiver, content;
+    private String Sender, Receiver, content, type;
+
+    public Message(String sender, String receiver, String content, String type) {
+        Sender = sender;
+        Receiver = receiver;
+        this.content = content;
+        this.type = type;
+    }
 
     public Message() {
     }
@@ -10,6 +17,14 @@ public class Message {
         Sender = sender;
         Receiver = receiver;
         this.content = content;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getSender() {

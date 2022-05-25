@@ -8,7 +8,7 @@
     tools:context=".MessageActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linear_layout"
+        android:id="@+id/linear_layout1"
         android:layout_width="0dp"
         android:layout_height="75dp"
         android:background="@color/colorSecond"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView2"
+            android:id="@+id/cardView21"
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/img_toolbar"
+                android:id="@+id/img_toolbar1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
@@ -37,82 +37,55 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/txtChattingWith"
+            android:id="@+id/txtChattingWith1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="20dp"
             android:text="aaaaaaaaaa"
-            app:layout_constraintBottom_toBottomOf="@+id/cardView2"
-            app:layout_constraintStart_toEndOf="@+id/cardView2"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView21"
+            app:layout_constraintStart_toEndOf="@+id/cardView21"
             app:layout_constraintTop_toTopOf="parent"
             />
 
         <ImageView
-            android:id="@+id/imgSearch1"
+            android:id="@+id/imgSearch"
             android:layout_width="25dp"
             android:layout_height="25dp"
+            android:layout_marginEnd="10dp"
             android:src="@drawable/img"
-            app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView21"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cardView2"
-            android:layout_marginEnd="10dp"/>
+            app:layout_constraintTop_toTopOf="@+id/cardView21" />
+
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:hint="search text"
+            app:layout_constraintBottom_toBottomOf="@+id/cardView21"
+            app:layout_constraintEnd_toStartOf="@+id/imgSearch"
+            app:layout_constraintStart_toEndOf="@+id/txtChattingWith1"
+            app:layout_constraintTop_toTopOf="@+id/cardView21" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ProgressBar
-        android:id="@+id/progressMessages"
+        android:id="@+id/progressSea"
         android:layout_width="200dp"
         android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/linear_layout" />
+        app:layout_constraintTop_toTopOf="@+id/linear_layout1" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerMessages"
+        android:id="@+id/recyclerSea"
         android:layout_width="match_parent"
         android:visibility="gone"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/edtText"
-        app:layout_constraintTop_toBottomOf="@+id/linear_layout" />
+        app:layout_constraintTop_toBottomOf="@+id/linear_layout1" />
 
-
-    <EditText
-        android:id="@+id/edtText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="9dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/message_input_background"
-        android:maxHeight="100dp"
-        android:minHeight="45dp"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imgSendMessage"
-        app:layout_constraintStart_toEndOf="@+id/imgUploadFile" />
-
-
-
-    <ImageView
-        android:id="@+id/imgUploadFile"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/ic_upload"
-        android:layout_marginTop="10dp"/>
-
-    <ImageView
-        android:id="@+id/imgSendMessage"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/send_img"
-        android:layout_marginBottom="13dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,16 +26,24 @@
                 android:layout_height="match_parent"/>
 
         </androidx.cardview.widget.CardView>
-
         <TextView
             android:id="@+id/txt_message_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="gag ga gagaw wwa gaagagagwgga agg agagawaggagawgawgwagaw"
+            android:layout_marginHorizontal="9dp"
+            android:background="@drawable/message_input_background"
             android:maxWidth="200dp"
             android:padding="8dp"
+            tools:text="gag ga gagaw wwa gaagagagwgga agg agagawaggagawgawgwagaw" />
+
+        <ImageView
+            android:id="@+id/img_message"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginHorizontal="9dp"
-            android:background="@drawable/message_input_background"/>
+            android:padding="8dp"
+            android:src="@drawable/ic_upload"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
