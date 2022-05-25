@@ -1,5 +1,6 @@
 "# AndroidChatApp Using Firebase"
 #Android-PTIT
+Tran Van Hai - B18DCAT073 - Nhom3
 Features:
   - Login/Logout
   - List All user
